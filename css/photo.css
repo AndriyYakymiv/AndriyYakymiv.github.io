@@ -1,0 +1,52 @@
+
+
+.crop {
+  width: 150px;
+  height: 150px;
+  overflow: hidden;
+  background-position: center;
+  background-size: cover;
+  display: block;
+  margin:8px;
+}
+
+.wide {
+  width: 664px;
+  float: left;
+  left: -25%;
+  position: relative;
+  margin-bottom: 33px;
+}
+
+
+.photo-cont {
+  padding: 0px;
+}
+
+@media only screen and (max-width: 992px){
+    .wide {
+      width: 332px;
+      left:0%;
+    }
+}
+
+@media only screen and (max-width: 768px){
+  .wide {
+    left:15%;
+    width: 90%;
+  }
+}
+
+.crop:hover {
+  box-shadow: 0px 10px 10px rgba(0, 0, 0, .2);
+  cursor: pointer;
+}
+
+.photo-error {
+  margin-top: 8px;
+}
+
+.final-btn{
+  background-color: #ff9800;
+  color: white;
+}

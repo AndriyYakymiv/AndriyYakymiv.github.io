@@ -1,0 +1,35 @@
+<form name="linksForm" novalidate ng-submit="nextPage('4_photo')">
+		<div class="col-xs-12 col-sm-12 col-md-12">
+			<p class="text-task">3. Check social networks</p>
+		</div>
+
+		<div class="input-container col-xs-12 col-sm-12 col-md-12">
+			<input type="checkbox" class="checkbox col-xs-1 col-sm-1 col-md-1" ng-click="showInputLink('facebook')" ng-checked="facebookInp">
+			<p class="col-xs-3 col-sm-3 col-md-3">Facebook</p>
+			<input name="facebookLinkk" type="text" placeholder="facebook.com/user_name" class="link-inp inp-error input-facebook-link col-xs-12 col-sm-7 col-md-7" ng-pattern="/[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/" ng-show="facebookInp" ng-model="facebookLinkInput">
+		</div>
+
+		<div class="input-container col-xs-12 col-sm-12 col-md-12">
+			<input type="checkbox" class="checkbox col-xs-1 col-sm-1 col-md-1" ng-click="showInputLink('twitter')"  ng-checked="twitterInp">
+			<p class="col-xs-3 col-sm-3 col-md-3">Twitter</p>
+			<input name="twitterLinkk" type="text" placeholder="twitter.com/user_name" class="link-inp inp-error input-twitter-link col-xs-12 col-sm-7 col-md-7" ng-pattern="/[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/" ng-show="twitterInp" ng-model="twitterLinkInput">
+		</div>
+
+		<div class="input-container col-xs-12 col-sm-12 col-md-12">
+			<input type="checkbox" class="checkbox col-xs-1 col-sm-1 col-md-1" ng-click="showInputLink('vk')"  ng-checked="vkInp">
+			<p class="col-xs-3 col-sm-3 col-md-3">Vk</p>
+			<input name="vkLinkk" type="text" placeholder="vk.com/user_name" class="link-inp inp-error input-vk-link col-xs-12 col-sm-7 col-md-7" ng-pattern="/[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/" ng-show="vkInp" ng-model="vkLinkInput">
+		</div>
+		
+		<div class="input-container last-link col-xs-12 col-sm-12 col-md-12">
+			<input type="checkbox" class="checkbox col-xs-1 col-sm-1 col-md-1" ng-click="showInputLink('ok')"  ng-checked="okInp">
+			<p class="last col-xs-3 col-sm-3 col-md-3">Ok</p>
+			<input name="okLinkk" type="text" placeholder="odnoklassniki.ru/user_name" class="link-inp inp-error input-ok-link col-xs-12 col-sm-7 col-md-7" ng-pattern="/[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/" ng-show="okInp" ng-model="okLinkInput">
+		</div>
+		
+
+		<div class="button-container col-xs-12 col-sm-12 col-md-12">
+			<a href="#2_location" class="btn prev-btn col-xs-5 col-sm-4 col-md-4"><span class="glyphicon glyphicon-chevron-left"></span>  Previous</a>
+			<button type="submit" class="btn next-btn col-xs-5 col-sm-4 col-md-4" ng-disabled="(linksForm.facebookLinkk.$invalid && !linksForm.facebookLinkk.length) || (linksForm.twitterLinkk.$invalid && !linksForm.twitterLinkk.length) || (linksForm.vkLinkk.$invalid && !linksForm.vkLinkk.length) || (linksForm.okLinkk.$invalid && !linksForm.okLinkk.length) ">Next  <span class="glyphicon glyphicon-chevron-right"></span></button>
+		</div>
+</form>

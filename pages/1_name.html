@@ -1,0 +1,19 @@
+<form name="nameForm" novalidate ng-submit="nextPage('2_location')">
+		<div class="text-container col-xs-12 col-sm-12 col-md-12">
+			<p class="text-task">1. Input name and e-mail</p>
+
+			<input name="userName" type="text" placeholder="Name"  class="inp top-inp inp-name inp-error col-xs-12 col-sm-8 col-md-8" ng-pattern="/^[a-zа-яєi ,.'-]+$/i" required ng-model="name" />
+			<div class="col-xs-12 col-sm-4 col-md-4" ng-show="nameForm.userName.$invalid && nameForm.userName.$dirty">
+				<span class="text-error-message ">{{checkName()}}</span>
+			</div>
+
+			<input name="userEmail" type="email" placeholder="E-mail"  class="inp inp-email inp-error col-xs-12 col-sm-8 col-md-8"  ng-pattern="/^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/"  required ng-model="email" />
+			<div class="col-xs-12 col-sm-4 col-md-4" ng-show="nameForm.userEmail.$invalid && nameForm.userEmail.$dirty">
+				<span class="text-error-message">{{checkEmail()}}</span>
+			</div>
+		</div>
+		<div class="button-container col-xs-12 col-sm-12 col-md-12">
+			<a href="#1_name" class="btn prev-btn col-xs-5 col-sm-4 col-md-4" ng-disabled="true"><span class="glyphicon glyphicon-chevron-left"></span>  Previous</a>
+			<button type="submit" class="btn next-btn col-xs-5 col-sm-4 col-md-4" ng-disabled="nameForm.$invalid">Next  <span class="glyphicon glyphicon-chevron-right"></span></button>
+		</div>
+</form>

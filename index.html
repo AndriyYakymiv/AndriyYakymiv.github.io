@@ -1,0 +1,46 @@
+<!doctype html>
+<html ng-app="questionnaireModule"> 
+	<head>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.js"></script>
+
+
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		
+		<link rel="stylesheet" type="text/css" href="css/mystyle.css">
+		<link rel="stylesheet" type="text/css" href="css/name.css">
+		<link rel="stylesheet" type="text/css" href="css/location.css">
+		<link rel="stylesheet" type="text/css" href="css/links.css">
+		<link rel="stylesheet" type="text/css" href="css/photo.css">
+		<link rel="stylesheet" type="text/css" href="css/final.css">
+	</head>
+
+	<body class="container">
+		<div class="row" >
+			<div class="pages-container col-xs-12  col-sm-12 col-lg-12" ng-show="showLinkButtons">
+				<div class="col-xs-12 col-sm-12 col-lg-12">
+					<button class="btn first-btn link-btn col-xs-12 col-sm-1 col-lg-1" ng-click="nextLinkPage('1_name')">1</button>
+
+					<button class="btn link-btn col-xs-12 col-sm-1 col-lg-1" ng-click="nextLinkPage('2_location')" ng-disabled="page2NotActive">2</button> <!--ng-disabled="page2NotActive"-->
+			    
+					<button class="btn link-btn col-xs-12 col-sm-1 col-lg-1" ng-click="nextLinkPage('3_links')" ng-disabled="page3NotActive">3</button><!--ng-disabled="page3NotActive"-->
+		
+					<button class="btn link-btn col-xs-12 col-sm-1 col-lg-1" ng-click="nextLinkPage('4_photo')" ng-disabled="page4NotActive">4</button><!--ng-disabled="page4NotActive"-->
+					<!--<a href="#final">fin</a>-->
+				</div>
+		    </div>
+
+			<div class="view-container col-xs-12 col-sm-12 col-lg-12" ng-view ></div>
+		</div>
+
+		  <script src="js/module.js"></script>
+		  <script src="js/controllers/nameController.js"></script>
+		  <script src="js/controllers/locationController.js"></script>
+		  <script src="js/controllers/linksController.js"></script>
+		  <script src="js/controllers/photoController.js"></script>
+		  <script src="js/controllers/finalController.js"></script>
+	 </body>
+ </html>
+

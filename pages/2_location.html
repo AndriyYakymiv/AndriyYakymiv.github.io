@@ -1,0 +1,18 @@
+<form name="locationForm" novalidate ng-submit="nextPage('3_links')">
+		<div class="text-container col-xs-12 col-sm-12 col-md-12">
+			<p class="text-task">2. Choose country and city</p>
+
+			<select name="userCountry" class="inp top-inp selection col-xs-12 col-sm-8 col-md-8"  ng-model="country"  required ng-options="country for country in countries">
+				<option class="fisrt-option" value="">--Country--</option>
+			</select>
+			{{getCitiesFromCountry()}}
+			<select name="userCity" class="inp selection col-xs-12 col-sm-8 col-md-8" ng-model="city" required ng-options="city for city in citiesFromCountry">
+				<option class="fisrt-option" value="">--City--</option>
+			</select>
+		</div>
+		
+		<div class="button-container col-xs-12 col-sm-12 col-md-12">
+			<a href="#1_name" class="btn prev-btn col-xs-5 col-sm-4 col-md-4"><span class="glyphicon glyphicon-chevron-left"></span>  Previous</a>
+			<button type="submit" class="btn next-btn col-xs-5 col-sm-4 col-md-4" ng-disabled="locationForm.$invalid">Next  <span class="glyphicon glyphicon-chevron-right"></span></button>
+		</div>
+</form>
