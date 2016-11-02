@@ -1,5 +1,5 @@
 <form name="linksForm" novalidate ng-submit="nextPage('final')">
-	<div class="">
+	<div class="col-xs-12 col-sm-12 col-md-12">
 		<p class="text-task">4. Choose the LIGHT side of the Force</p>
 	</div>
 
@@ -25,7 +25,7 @@
 
 
 	<div class="button-container col-xs-12 col-sm-12 col-md-12">
-		<a href="#3_links" class="btn prev-btn col-xs-5 col-sm-4 col-md-4"><span class="glyphicon glyphicon-chevron-left"></span>  Previous</a>
+		<button class="btn prev-btn col-xs-5 col-sm-4 col-md-4" ng-click="nextLinkPage('3_links')"><span class="glyphicon glyphicon-chevron-left"></span>  Previous</button>
 		<button type="submit" class="btn final-btn col-xs-5 col-sm-4 col-md-4" ng-disabled="!choosePhoto">Finish</button>
 	</div>
 </form>
