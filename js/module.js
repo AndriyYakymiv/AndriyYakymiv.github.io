@@ -1,4 +1,4 @@
-var questionModule = angular.module('questionnaireModule',['ngRoute']);
+var questionModule = angular.module('questionnaireModule',['ngRoute', 'ui.bootstrap']);
 
 questionModule.run(function($rootScope,$location) {
     $rootScope.name = "";
@@ -27,6 +27,9 @@ questionModule.run(function($rootScope,$location) {
     };
 
 })
+
+
+
 questionModule.config(function($routeProvider) {
       $routeProvider
       .when('/', {

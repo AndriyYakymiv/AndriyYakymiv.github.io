@@ -1,3 +1,14 @@
 .fisrt-option{
     color: #bbbbbb;
 }
+.selection {
+	margin-bottom:16px;
+}
+
+.autocomp-container {
+	padding: 0px;
+}
+
+.dropdown-menu {
+	width: 100%;
+}
