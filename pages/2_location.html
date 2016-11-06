@@ -7,9 +7,10 @@
 			</select>
 		
 			<div class="autocomp-container col-xs-12 col-sm-8 col-md-8">
-	        <input name="userCity" type="text" class="inp inp-error col-xs-12 col-sm-12 col-md-12" ng-model="city" uib-typeahead="city as city.name for city in CitiesC | filter:{name:$viewValue}"  typeahead-show-hint="true" typeahead-min-length="0" placeholder="City" ng-pattern="/^[a-zа-яєi ,.'-]+$/i" required/>
+		        <input name="userCity" type="text" class="inp inp-error col-xs-12 col-sm-12 col-md-12" ng-model="city" uib-typeahead="city as city.name for city in citiesFromCountry | filter:{name:$viewValue}"  typeahead-show-hint="true" typeahead-min-length="0" placeholder="City" ng-pattern="/^[a-zа-яєi ,.'-]+$/i" required/>
 	        </div>
-						{{getCitiesFromCountry ()}}
+		
+		{{getCitiesFromCountry ()}}
 
 		</div>
 		

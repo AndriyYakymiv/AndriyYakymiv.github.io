@@ -12,7 +12,6 @@ questionModule.controller('locationController', function($scope,$rootScope,$http
 	
 	$scope.getCitiesFromCountry = function(){
 		$scope.citiesFromCountry = [];
-		$scope.CitiesC = []
 	    for (var key in $scope.countries){
 		    if($scope.countries[key] == $scope.country) {
 		    	$scope.countryID = key;
@@ -28,11 +27,10 @@ questionModule.controller('locationController', function($scope,$rootScope,$http
 	      			}
 	      		}
 	      		if(!$scope.repeatFlag) {
-	      			$scope.citiesFromCountry.push($scope.cities[key].name);
 	      			var obj = {
 	      				name:$scope.cities[key].name
 	      			}
-	      			$scope.CitiesC.push(obj);
+	      			$scope.citiesFromCountry.push(obj);
 	      		}
 	      	}
 	    }
@@ -42,7 +40,7 @@ questionModule.controller('locationController', function($scope,$rootScope,$http
 	$scope.nextPage = function (path){
 		$rootScope.page3NotActive = false;
 		$rootScope.country = $scope.country;
-		$rootScope.city = $scope.city.name;
+		$rootScope.city = ($scope.city.name) ? $scope.city.name : $scope.city;
 		$location.path(path);
 	};
 
