@@ -1,50 +1,52 @@
-questionModule.controller('locationController', function($scope,$rootScope,$http,$location) {
-	$http.get('../../data/countries.json').then(function (response) {
-		$scope.countries = response.data;
-	});
+angular.module('questionnaireModule')
+	.controller('LocationController', LocationController);
 
-	$http.get('../../data/cities.json').then(function (response) {
-		$scope.cities = response.data;
-	});
+	LocationController.$inject = ['$scope', '$rootScope', '$http', '$location'];
 
-	    $scope.selected = undefined;
+	function LocationController($scope,$rootScope,$http,$location) {
+		$http.get('../../data/countries.json').then(function (response) {
+			$scope.countries = response.data;
+		});
 
-	
-	$scope.getCitiesFromCountry = function(){
-		$scope.citiesFromCountry = [];
-	    for (var key in $scope.countries){
-		    if($scope.countries[key] == $scope.country) {
-		    	$scope.countryID = key;
-		      	break;
+		$http.get('../../data/cities.json').then(function (response) {
+			$scope.cities = response.data;
+		});
+
+		    $scope.selected = undefined;
+
+		
+		$scope.getCitiesFromCountry = function(){
+			$scope.citiesFromCountry = [];
+		    for (var key in $scope.countries){
+			    if($scope.countries[key] == $scope.country) {
+			    	$scope.countryID = key;
+			      	break;
+			    }
 		    }
-	    }
-	    for (var key in $scope.cities){
-	    	$scope.repeatFlag = false;
-	      	if($scope.cities[key].country == $scope.countryID && $scope.cities[key].name != $scope.country) {
-	      		for (var i = 0; i < $scope.citiesFromCountry.length; i++) {
-	      			if ($scope.cities[key].name == $scope.citiesFromCountry[i]) {
-	      				$scope.repeatFlag = true;
-	      			}
-	      		}
-	      		if(!$scope.repeatFlag) {
-	      			var obj = {
-	      				name:$scope.cities[key].name
-	      			}
-	      			$scope.citiesFromCountry.push(obj);
-	      		}
-	      	}
-	    }
-	};
+		    for (var key in $scope.cities){
+		    	$scope.repeatFlag = false;
+		      	if($scope.cities[key].country == $scope.countryID && $scope.cities[key].name != $scope.country) {
+		      		for (var i = 0; i < $scope.citiesFromCountry.length; i++) {
+		      			if ($scope.cities[key].name == $scope.citiesFromCountry[i]) {
+		      				$scope.repeatFlag = true;
+		      			}
+		      		}
+		      		if(!$scope.repeatFlag) {
+		      			var obj = {
+		      				name:$scope.cities[key].name
+		      			}
+		      			$scope.citiesFromCountry.push(obj);
+		      		}
+		      	}
+		    }
+		};
 
-	
-	$scope.nextPage = function (path){
-		$rootScope.page3NotActive = false;
-		$rootScope.country = $scope.country;
-		$rootScope.city = ($scope.city.name) ? $scope.city.name : $scope.city;
-		$location.path(path);
-	};
+		
+		$scope.nextPage = function (path){
+			$rootScope.page3NotActive = false;
+			$rootScope.country = $scope.country;
+			$rootScope.city = ($scope.city.name) ? $scope.city.name : $scope.city;
+			$location.path(path);
+		};
 
-});
-/*<select name="userCity" class="inp selection col-xs-12 col-sm-8 col-md-8" ng-model="city" required ng-options="city for city in citiesFromCountry">
-				<option class="fisrt-option" value="">--City--</option>
-			</select>*/
+	};

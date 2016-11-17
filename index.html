@@ -28,13 +28,9 @@
 			<div class="pages-container col-xs-12  col-sm-12 col-lg-12" ng-show="showLinkButtons">
 				<div class="col-xs-12 col-sm-12 col-lg-12">
 					<button class="btn first-btn link-btn col-xs-12 col-sm-1 col-lg-1" ng-click="nextLinkPage('1_name')">1</button>
-
-					<button class="btn link-btn col-xs-12 col-sm-1 col-lg-1" ng-click="nextLinkPage('2_location')" ng-disabled="page2NotActive">2</button> <!--ng-disabled="page2NotActive"-->
-			    
-					<button class="btn link-btn col-xs-12 col-sm-1 col-lg-1" ng-click="nextLinkPage('3_links')" ng-disabled="page3NotActive">3</button><!--ng-disabled="page3NotActive"-->
-		
-					<button class="btn link-btn col-xs-12 col-sm-1 col-lg-1" ng-click="nextLinkPage('4_photo')" ng-disabled="page4NotActive">4</button><!--ng-disabled="page4NotActive"-->
-					<!--<a href="#final">fin</a>-->
+					<button class="btn link-btn col-xs-12 col-sm-1 col-lg-1" ng-click="nextLinkPage('2_location')" ng-disabled="page2NotActive">2</button> 
+					<button class="btn link-btn col-xs-12 col-sm-1 col-lg-1" ng-click="nextLinkPage('3_links')" ng-disabled="page3NotActive">3</button>
+					<button class="btn link-btn col-xs-12 col-sm-1 col-lg-1" ng-click="nextLinkPage('4_photo')" ng-disabled="page4NotActive">4</button>
 				</div>
 		    </div>
 
@@ -42,6 +38,7 @@
 		</div>
 
 		  <script src="js/module.js"></script>
+		  <script src="js/routeProvider.js"></script>
 		  <script src="js/controllers/nameController.js"></script>
 		  <script src="js/controllers/locationController.js"></script>
 		  <script src="js/controllers/linksController.js"></script>
